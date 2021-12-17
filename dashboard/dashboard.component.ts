@@ -1,0 +1,51 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
+})
+export class DashboardComponent implements OnInit {
+  subjects;
+  name:string;
+  constructor(private router:Router) { }
+
+  ngOnInit() {
+    if(!localStorage.getItem("name")){
+      console.log
+    }else{
+      this.name=localStorage.getItem("name");
+    }
+  
+    this.subjects=[
+      {
+        img:'assets/addservice.png',
+        name:'Add Service'
+      },
+      {
+        img:'assets/credit.png',
+        name:'Credit Limits'
+      },
+      {
+        img:'assets/new request.png',
+        name:'New Request'
+      },
+      {
+        img:'assets/inprogress.png',
+        name:'Inprocess'
+      },
+      {
+        img:'assets/pendings.gif',
+        name:'Pending'
+      },
+      {
+        img:'assets/addbranch.png',
+        name:'Add Branch'
+      },
+    ];
+  }
+ goTosubject(){
+   
+ }
+}
